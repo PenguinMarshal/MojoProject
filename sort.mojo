@@ -75,6 +75,13 @@ fn selection_sort(inout vector: List[Int]):
         if min_idx != i:
             swap(vector, i, min_idx)
 
+# Bubble Sort with visualization
+fn bubble_sort(inout vector: List[Int]):
+    for i in range(len(vector)):
+        for j in range(len(vector) - i - 1):
+            if vector[j] > vector[j + 1]:
+                swap(vector, j, j + 1)
+
 # Main application loop
 fn main() raises:
     # Import Python built-in functions
@@ -113,7 +120,7 @@ fn main() raises:
         print("1. Quick Sort")
         print("2. Insertion Sort")
         print("3. Selection Sort")
-        print("4. Blank Sort (not implemented yet)")
+        print("4. Bubble Sort")
         print("5. Blank Sort (not implemented yet)")
         print("Enter the number corresponding to your choice: ")
 
@@ -136,6 +143,9 @@ fn main() raises:
         elif parsed_choice == 3:
             print("Sorting using Selection Sort...")
             selection_sort(arr)
+        elif parsed_choice == 4:
+            print("Sorting using Bubble Sort...")
+            bubble_sort(arr)
         else:
             print("The selected sorting algorithm is not implemented yet. Exiting.")
             return
